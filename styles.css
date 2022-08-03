@@ -74,6 +74,7 @@ body {
   background: white;
   padding: 3.2rem 4rem;
   border-radius: 0 1rem 1rem 0;
+  position: relative;
 }
 .content__header {
   font-weight: 700;
@@ -118,6 +119,8 @@ body {
   border-radius: 50%;
   background: #ecf2f8;
   padding: 0.9rem;
+  position: relative;
+  z-index: 42069;
 }
 .content__cta img {
   pointer-events: none;
@@ -163,6 +166,60 @@ body {
 }
 .content__icon-box {
   gap: 1.6rem;
+}
+@media all and (max-width: 878px) {
+  .content__popup {
+    border-radius: 0 0 1rem 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 2.5rem 3.7rem;
+    gap: 2.1rem;
+  }
+
+  .content__popup::after {
+    display: none;
+  }
+}
+
+@media all and (max-width: 746px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .content__imgBox {
+    max-width: 44.5rem;
+  }
+  .content__imgBox img {
+    border-radius: 1rem 1rem 0 0;
+  }
+  .content__textbox {
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+@media all and (max-width: 500px) {
+  body {
+    min-height: initial;
+    display: block;
+    padding: 7.4rem 2.4rem 8.9rem 2.4rem;
+  }
+  .content__textbox {
+    padding: 3.6rem 3.2rem 2rem 3.2rem;
+  }
+  .content__header {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.2px;
+  }
+  .content__description {
+    margin-bottom: 5.2rem;
+  }
+  .content__popup {
+    border-radius: 0 0 1rem 1rem;
+    padding: 2.2rem 11rem 2.2rem 3.2rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
 
 @keyframes popup {
